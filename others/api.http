@@ -1,0 +1,26 @@
+@hostname = localhost
+@port = 10086
+@contentType = application/json
+@token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxYjY1NmIwMmZjMzk0YzNmYTE5ZGZlMGJhYTkxYzU4NCIsInN1YiI6IjIiLCJpc3MiOiJwYXAiLCJpYXQiOjE2NTE2NzU5MTUsImV4cCI6MTY1MTY3OTUxNX0.gCjVDnxv4m-VKkoSPfNyDrUv9xCWtHWpovAYLI66VNs
+
+
+#### 登录 ####
+POST http://{{hostname}}:{{port}}/user/login HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "userName":"wukai",
+    "password":"1234"
+}
+
+
+#### Hello测试 ####
+GET http://{{hostname}}:{{port}}/hello HTTP/1.1
+Content-Type: {{contentType}}
+token: {{token}}
+
+
+### 注销 ###
+POST http://{{hostname}}:{{port}}/user/logout HTTP/1.1
+Content-Type: {{contentType}}
+token:{{token}}
